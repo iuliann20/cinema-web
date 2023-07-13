@@ -8,6 +8,8 @@ import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
+import routes from '../../utils/routes';
+import { Link as RouterLink } from 'react-router-dom';
 
 export default function Login() {
 
@@ -74,7 +76,7 @@ export default function Login() {
                                 </Link>
                             </Grid>
                             <Grid item>
-                                <Link href="#" variant="body2">
+                                <Link data-testid='register-button' component={RouterLink} to={routes.register} variant="body2">
                                     {"Don't have an account? Sign Up"}
                                 </Link>
                             </Grid>

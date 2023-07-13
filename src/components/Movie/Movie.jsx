@@ -3,6 +3,9 @@ import MovieCard from '../../Common/MovieCard/MovieCard';
 import 'bootstrap/dist/css/bootstrap.css';
 
 export default function Movie() {
+
+  
+
   const renderComponents = () => {
     const componentArray = Array.from({ length: 6 }, (_, index) => index);
     return componentArray.map((item) => (
