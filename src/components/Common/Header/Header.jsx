@@ -14,10 +14,11 @@ import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
-import Login from "../../../Modals/LoginModal";
+import Login from "../../../Common/LoginModal/Login";
+import { Link } from 'react-router-dom';
 
 export default function Header() {
-    const pages = ['PROGRAM', 'MOVIE', 'BIDDER', 'CAMPAIGN', 'SHOP'];
+    const pages = [{page:'PROGRAM', route: routes.program}, {page:'MOVIE', route: routes.movie}, {page:'BIDDER', route: routes.bidder}, {page: 'CAMPAIGN', route:routes.campaign},{page: 'SHOP',route:routes.shop}];
     const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
     const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -92,8 +93,8 @@ export default function Header() {
               }}
             >
               {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
+                <MenuItem key={page.page} onClick={handleCloseNavMenu}>
+                  <Typography textAlign="center">{page.page}</Typography>
                 </MenuItem>
               ))}
             </Menu>
@@ -120,11 +121,13 @@ export default function Header() {
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (
               <Button
-                key={page}
+                component = {Link}
+                to = {page.route}
+                key={page.page}
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: 'white', display: 'block' }}
               >
-                {page}
+                {page.page}
               </Button>
             ))}
           </Box>
