@@ -1,0 +1,55 @@
+.navbar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  background-color: #333;
+}
+
+.navbar-logo img {
+  height: 40px;
+  width: auto;
+}
+
+.navbar-links {
+  display: flex;
+  margin-left: auto; /* Aliniere la stânga */
+}
+
+.navbar-link {
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+  margin-right: 20px;
+}
+
+.navbar-link:hover {
+  text-decoration: underline;
+}
+
+.info-button {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: transparent;
+  color: #fff;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  font-size: 24px;
+}
+
+.info-content {
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 10px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  padding: 10px;
+  display: none;
+}
+
+.info-button .info-content,
+.info-content.open {
+  display: block;
+}
