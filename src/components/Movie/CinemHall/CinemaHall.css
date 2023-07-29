@@ -1,0 +1,35 @@
+.cinema-hall {
+  display: grid;
+  grid-template-columns: repeat(8, 20px); /* Ajustați numărul de scaune pe rând și lățimea scaunelor (40px în exemplul nostru) */
+  gap: 30px; /* Spațiu între scaune, mărim spațiul la 10px */
+}
+
+.row {
+  display: flex;
+  gap: 10px; /* Spațiu între scaune, mărim spațiul la 10px */
+}
+
+.seat {
+  width: 40px; /* Lățimea fiecărui scaun */
+  height: 40px; /* Înălțimea fiecărui scaun */
+  border: 1px solid #ccc;
+  cursor: pointer;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  border-radius: 6px; /* Adăugăm colțuri rotunjite */
+}
+
+.liber {
+  background-color: #aaffaa;
+}
+
+.selectat {
+  background-color: #ffffaa;
+}
+
+.ocupat {
+  background-color: #ffaaaa;
+}

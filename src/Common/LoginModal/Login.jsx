@@ -10,16 +10,27 @@ import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import routes from '../../utils/routes';
 import { Link as RouterLink } from 'react-router-dom';
-
+import { useDispatch, useSelector } from "react-redux";
+import { setLoginUserDetails, loginByUsername } from "../../actions/user";
 export default function Login() {
+    const dispatch = useDispatch();
+    const loginDetailsState = useSelector((state) => state.user.loginUserDetails);
+
+    const changeHandler = (e) => {
+        let fieldName = e.target.name;
+        let value = e.target.value;
+        if (fieldName === "rememberMe") {
+            value = e.target.checked;
+        }
+        dispatch(setLoginUserDetails({
+            ...loginDetailsState,
+            [fieldName]: value
+        }));
+    };
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        const data = new FormData(event.currentTarget);
-        console.log({
-          email: data.get("email"),
-          password: data.get("password"),
-        });
+        dispatch(loginByUsername(loginDetailsState));
       };
       
     return (
@@ -41,11 +52,12 @@ export default function Login() {
                             margin="normal"
                             required
                             fullWidth
-                            id="email"
-                            label="Email Address"
-                            name="email"
-                            autoComplete="email"
+                            id="text"
+                            label="Username"
+                            name="username"
+                            autoComplete="username"
                             autoFocus
+                            onChange={changeHandler}
                         />
                         <TextField
                             margin="normal"
@@ -56,9 +68,10 @@ export default function Login() {
                             type="password"
                             id="password"
                             autoComplete="current-password"
+                            onChange={changeHandler}
                         />
                         <FormControlLabel
-                            control={<Checkbox value="remember" color="primary" />}
+                            control={<Checkbox value="remember" name="rememberMe" color="primary" onChange = {changeHandler} />}
                             label="Remember me"
                         />
                         <Button

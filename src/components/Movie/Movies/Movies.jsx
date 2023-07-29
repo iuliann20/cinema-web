@@ -1,11 +1,8 @@
 import React, { useState } from "react";
-import MovieCard from '../../Common/MovieCard/MovieCard';
+import MovieCard from '../../../Common/MovieCard/MovieCard';
 import 'bootstrap/dist/css/bootstrap.css';
 
 export default function Movie() {
-
-  
-
   const renderComponents = () => {
     const componentArray = Array.from({ length: 6 }, (_, index) => index);
     return componentArray.map((item) => (
@@ -16,8 +13,10 @@ export default function Movie() {
   };
 
   return (
+    <div className="container">
     <div className="row mx-2" data-testid="movie-row">
       {renderComponents()}
+    </div>
     </div>
   );
 }

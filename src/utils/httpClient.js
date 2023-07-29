@@ -2,8 +2,10 @@
  * Perform a GET operation
  * @param {string} url relative to the host name
  */
+const REACT_APP_API_BASE_URL = "https://localhost:7016";
+
 const httpGet = (url) => {
-    return fetch(`${window.location.protocol}//${window.location.host}${url}`, {
+    return fetch(`${REACT_APP_API_BASE_URL}${url}`, {
       credentials: 'include'
     });
   };
@@ -14,7 +16,7 @@ const httpGet = (url) => {
    * @param {object} content the data to send
    */
   const httpPost = (url, content = {}) => {
-    return fetch(`${window.location.protocol}//${window.location.host}${url}`, {
+    return fetch(`${REACT_APP_API_BASE_URL}${url}`, {
       method: 'POST', // GET, *POST, PUT, DELETE, etc.
       credentials: 'include', // *include, same-origin, omit
       headers: {
@@ -30,7 +32,7 @@ const httpGet = (url) => {
    * @param {object} content the data to send
    */
    const httpDelete = (url, content = {}) => {
-    return fetch(`${window.location.protocol}//${window.location.host}${url}`, {
+    return fetch(`${REACT_APP_API_BASE_URL}${url}`, {
       method: 'DELETE', // GET, *POST, PUT, DELETE, etc.
       credentials: 'include', // *include, same-origin, omit
       headers: {
@@ -41,7 +43,7 @@ const httpGet = (url) => {
   }
   
   const httpUpload = (url, content = {}) => {
-    return fetch(`${window.location.protocol}//${window.location.host}${url}`, {
+    return fetch(`${REACT_APP_API_BASE_URL}${url}`, {
       method: 'POST', // GET, *POST, PUT, DELETE, etc.
       credentials: 'include', // *include, same-origin, omit
       body: content
