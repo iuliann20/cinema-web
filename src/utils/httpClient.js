@@ -82,4 +82,3 @@ const httpGet = (url, jwtToken) => {
     upload: httpUpload,
     download: httpDownload
   };
-  
