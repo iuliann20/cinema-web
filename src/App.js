@@ -8,6 +8,7 @@ import Register from './components/Register/Register';
 import routes from './utils/routes';
 import Home from './components/Home/Home';
 import Movies from './components/Movie/Movies/Movies';
+import MoviePage from './components/Movie/Movie/MoviePage';
 
 function App() {
 
@@ -23,6 +24,7 @@ function App() {
             <Route path = {routes.home} element = {<Home/>}/>
             <Route path = {routes.register} element = {<Register/>} />
             <Route path = {routes.movie} element = {<Movies/>} />
+            <Route path = {routes.moviePage} element = {<MoviePage/>} />
         </Routes>
       </BrowserRouter>
 

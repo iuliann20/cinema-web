@@ -1,0 +1,93 @@
+/* Stiluri pentru MoviePage */
+.movieContainer {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    gap: 2rem;
+  }
+  
+  .movieDetails {
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .movieImage {
+    width: 300px;
+    height: auto;
+  }
+  
+  .movieInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .descriptionContainer {
+    margin-top: 2rem;
+  }
+  
+  .castContainer {
+    margin-top: 2rem;
+  }
+  
+  .castTitle {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .castList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .castItem {
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+  }
+  
+  .castAvatar {
+    margin-right: 1rem;
+  }
+  
+  .castName {
+    font-weight: bold;
+  }
+  
+  .reviewsContainer {
+    margin-top: 2rem;
+  }
+  
+  .review {
+    margin-top: 1rem;
+    border: 1px solid #ccc;
+    padding: 1rem;
+    background-color: #f8f8f8;
+  }
+  
+  .reviewAuthor {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
+  
+  .reviewContent {
+    margin-bottom: 0.5rem;
+  }
+  
+  .reviewActions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .addReviewContainer {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+  
+  .addReviewInput {
+    flex: 1;
+  }
+  

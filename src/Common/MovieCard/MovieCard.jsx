@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import {
     MDBCard,
     MDBCardImage,
@@ -7,19 +8,21 @@ import {
     MDBCardText,
     MDBCardLink
 } from 'mdb-react-ui-kit';
-export default function MovieCard() {
+import routes from '../../utils/routes';
+
+import { Link as RouterLink } from 'react-router-dom';
+
+export default function MovieCard({ movie }) {
     return (
         <MDBCard className='mt-2'>
-            <MDBCardImage position='top' alt='...' src='https://mdbootstrap.com/img/new/standard/city/062.webp' />
-            <MDBCardBody>
-                <MDBCardTitle>Card title</MDBCardTitle>
-                <MDBCardText>
-                    Some quick example text to build on the card title and make up the bulk of the card's content.
-                </MDBCardText>
-            </MDBCardBody>
-            <MDBCardBody>
-                <MDBCardLink href='#'>Card link</MDBCardLink>
-            </MDBCardBody>
+          <MDBCardImage position='top' alt={movie.title} src={movie.imageURL} />
+          <MDBCardBody>
+            <MDBCardTitle>{movie.title}</MDBCardTitle>
+            <MDBCardText>{movie.description}</MDBCardText>
+          </MDBCardBody>
+          <MDBCardBody>
+            <Link href='#' to={`${routes.moviePage}/${movie.id}`}>Card link</Link>
+          </MDBCardBody>
         </MDBCard>
-    );
+      );
 }

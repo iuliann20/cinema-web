@@ -7,5 +7,6 @@ export default {
     movie: '/movie',
     bidder: '/bidder',
     campaign :'/campaign',
-    shop: '/shop'
+    shop: '/shop',
+    moviePage: '/movies/:id'
 }
